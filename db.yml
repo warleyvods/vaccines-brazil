@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  db:
+    image: postgres:10-alpine
+    container_name: db
+    hostname: db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=vaccines
+    volumes:
+      - '/var/pg_db:/var/lib/postgresql'
+      - '/var/pg_data:/var/lib/postgresql/data'
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
