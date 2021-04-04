@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("users")
 public class UsersController {
 
-    //COISA
     private final UsersService usersService;
 
     public UsersController(UsersService usersService) {

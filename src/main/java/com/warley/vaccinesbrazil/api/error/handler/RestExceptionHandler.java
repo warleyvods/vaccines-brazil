@@ -15,7 +15,6 @@ import java.util.Date;
 import java.util.Set;
 
 @RestControllerAdvice
-@ControllerAdvice
 public class RestExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
