@@ -3,14 +3,14 @@ package com.warley.vaccinesbrazil.api.entitys.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.warley.vaccinesbrazil.api.entitys.vaccine.Vaccine;
 import com.warley.vaccinesbrazil.api.utils.AbstractEntity;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;

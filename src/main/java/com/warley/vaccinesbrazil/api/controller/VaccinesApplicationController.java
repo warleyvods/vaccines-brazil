@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("vaccines")
 public class VaccinesApplicationController {
@@ -21,7 +23,7 @@ public class VaccinesApplicationController {
     }
 
     @PostMapping("/saveVaccineApplication")
-    public ResponseEntity<Vaccine> saveVaccineApplication(@RequestBody VaccinePostRequestBody vaccinePostRequestBody) {
+    public ResponseEntity<Vaccine> saveVaccineApplication(@Valid @RequestBody VaccinePostRequestBody vaccinePostRequestBody) {
         return new ResponseEntity<>(vaccineApplicationService.saveVaccineApplication(vaccinePostRequestBody), HttpStatus.CREATED);
     }
 

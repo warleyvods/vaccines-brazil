@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("users")
 public class UsersController {
@@ -21,7 +23,7 @@ public class UsersController {
     }
 
     @PostMapping("/saveUser")
-    public ResponseEntity<Users> saveUser(@RequestBody UserPostRequestBody userPostRequestBody) {
+    public ResponseEntity<Users> saveUser(@Valid @RequestBody UserPostRequestBody userPostRequestBody) {
         return new ResponseEntity<>(usersService.saveUser(userPostRequestBody), HttpStatus.CREATED);
     }
 
